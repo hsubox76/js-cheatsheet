@@ -1,0 +1,41 @@
+<html ng-app="CheatsheetApp">
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="cs_style.css">
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="cheatsheet.js"></script>
+  </head>
+  <body ng-controller="CheatsheetController">
+    <div class="container">
+      <div class="row clearfix">
+        <div class="heading blank">
+
+        </div>
+        <div class="heading string">
+          <span class="heading-text">String</span>
+        </div>
+        <div class="heading array">
+          <span class="heading-text">Array</span>
+        </div>
+        <div class="heading object">
+          <span class="heading-text">Object</span>
+        </div>
+      </div>
+      <div class="row clearfix" ng-repeat="method in methods">
+        <div class="method property">
+          <span class="method-text">{{method.name}}</span>
+        </div>
+        <div class="info" ng-class="{experimental: method.string.experimental, na: !method.string}">
+          <span class="info-text">{{method.string && method.string.code || '&nbsp;'}} <span class='comment'>{{method.string.comment}}</span></span>
+        </div>
+        <div class="info" ng-class="{experimental: method.array.experimental, mutator: method.array.mutator, na: !method.array}">
+          <span class="info-text">{{method.array && method.array.code || '&nbsp;'}} <span class='comment'>{{method.array.comment}}</span></span>
+        </div>
+        <div class="info" ng-class="{experimental: method.object.experimental, na: !method.object}">
+          <span class="info-text">{{method.object && method.object.code || '&nbsp;'}} <span class='comment'>{{method.object.comment}}</span></span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
