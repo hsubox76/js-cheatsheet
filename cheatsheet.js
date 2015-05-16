@@ -17,6 +17,7 @@ CheatsheetApp.controller('CheatsheetController', function ($scope) {
     console.log($scope.objectOnly);
   };
   $scope.methods = [
+    // string/array shared methods
     {
       name: '.length',
       string: { code: '"abc".length', comment: '// 3'},
@@ -36,11 +37,24 @@ CheatsheetApp.controller('CheatsheetController', function ($scope) {
       object: null
     },
     {
+      name: '.indexOf()',
+      string: { code: '"abc".indexOf("c")', comment: '// 2'},
+      array: { code: '[1,2,3].indexOf(3)', comment: '// 2'},
+      object: null
+    },
+    {
+      name: '.lastIndexOf()',
+      string: { code: '"abb".lastIndexOf("b")', comment: '// 2'},
+      array: { code: '[3,1,3].lastIndexOf(3)', comment: '// 2'},
+      object: null
+    },
+    {
       name: '.toString()',
       string: { code: '"abc".toString()', comment: '// "abc"'},
       array: { code: '[1,2,3].toString()', comment: '// "123"'},
       object: { code: 'anyObj.toString()', comment: '// "[object Object]"'}
     },
+    // string methods only
     {
       name: '.charAt()',
       string: { code: '"abc".charAt(1)', comment: '// "b"'},
@@ -62,18 +76,6 @@ CheatsheetApp.controller('CheatsheetController', function ($scope) {
     {
       name: '.endsWith()',
       string: { code: '"abc".endsWith("c")', comment: '// true', experimental: true},
-      array: null,
-      object: null
-    },
-    {
-      name: '.indexOf()',
-      string: { code: '"abc".indexOf("c")', comment: '// 2'},
-      array: null,
-      object: null
-    },
-    {
-      name: '.lastIndexOf()',
-      string: { code: '"abb".lastIndexOf("b")', comment: '// 2'},
       array: null,
       object: null
     },
@@ -149,6 +151,7 @@ CheatsheetApp.controller('CheatsheetController', function ($scope) {
       array: null,
       object: null
     },
+    // array methods only
     {
       name: '.copyWithin()',
       string: null,
@@ -161,7 +164,61 @@ CheatsheetApp.controller('CheatsheetController', function ($scope) {
     {
       name: '.fill()',
       string: null,
-      array: { code: '[1,2,3].fill(4)', comment: '// [4,4,4]', experimental: true},
+      array: { code: '[1,2,3].fill(4)', comment: '// array is now [4,4,4]', experimental: true, mutator: true},
+      object: null
+    },
+    {
+      name: '.pop()',
+      string: null,
+      array: { code: '[1,2,3].pop()', comment: '// returns 3, array is now [1,2]', mutator: true},
+      object: null
+    },
+    {
+      name: '.push(3)',
+      string: null,
+      array: { code: '[1,2].push(3)', comment: '// array is now [1,2,3]', mutator: true},
+      object: null
+    },
+    {
+      name: '.reverse()',
+      string: null,
+      array: { code: '[1,2,3].reverse()', comment: '// array is now [3,2,1]', mutator: true},
+      object: null
+    },
+    {
+      name: '.shift()',
+      string: null,
+      array: { code: '[1,2,3].shift()', comment: '// returns 1, array is now [2,3]', mutator: true},
+      object: null
+    },
+    {
+      name: '.sort()',
+      string: null,
+      array: { code: '[2,3,1].sort()', comment: '// array is now [1,2,3]', mutator: true},
+      object: null
+    },
+    {
+      name: '.splice()',
+      string: null,
+      array: { code: '[1,2,3].splice(1,1)', comment: '// returns 2, array is now [1,3]', mutator: true},
+      object: null
+    },
+    {
+      name: '.unshift()',
+      string: null,
+      array: { code: '[1,2].unshift(0)', comment: '// array is now [0,1,2]', mutator: true},
+      object: null
+    },
+    {
+      name: '.join()',
+      string: null,
+      array: { code: '[1,2,3].join(":")', comment: '// "1:2:3"'},
+      object: null
+    },
+    {
+      name: '.slice()',
+      string: null,
+      array: { code: '[1,2,3].slice(1)', comment: '// "[2,3]"'},
       object: null
     },
     {

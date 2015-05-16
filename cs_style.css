@@ -50,6 +50,11 @@ body {
   margin: 3px;
   color: #fff;
   text-align: center;
+  cursor: pointer;
+}
+
+.heading:hover {
+  background-color: #A7D1F4;
 }
 
 .string {
