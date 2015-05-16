@@ -70,6 +70,11 @@ body {
   color: #2A4F6E;
 }
 
+.heading.highlighted {
+  background-color: #8EB1D0;
+  color: #2A4F6E;
+}
+
 .blank {
   border: none;
   background: none;

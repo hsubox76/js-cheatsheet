@@ -11,17 +11,18 @@
         <td class="heading blank">
 
         </td>
-        <td class="heading string">
+        <td class="heading string" ng-click="toggleStringOnly()" ng-class="{ highlighted: stringOnly }">
           <span class="heading-text">String</span>
         </td>
-        <td class="heading array">
+        <td class="heading array" ng-click="toggleArrayOnly()" ng-class="{ highlighted: arrayOnly }">
           <span class="heading-text">Array</span>
         </td>
-        <td class="heading object">
+        <td class="heading object" ng-click="toggleObjectOnly()" ng-class="{ highlighted: objectOnly }">
           <span class="heading-text">Object</span>
         </td>
       </tr>
-      <tr class="row clearfix" ng-repeat="method in methods">
+      <tr class="row clearfix" ng-repeat="method in methods" ng-show="
+        (!stringOnly && !arrayOnly && !objectOnly) || (method.string && stringOnly) || (method.array && arrayOnly) || (method.object && objectOnly)">
         <td class="method property">
           <span class="method-text">{{method.name}}</span>
         </td>

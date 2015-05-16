@@ -1,6 +1,21 @@
 var CheatsheetApp = angular.module('CheatsheetApp', []);
 
 CheatsheetApp.controller('CheatsheetController', function ($scope) {
+  $scope.stringOnly = false;
+  $scope.arrayOnly = false;
+  $scope.objOnly = false;
+  $scope.toggleStringOnly = function () {
+    $scope.stringOnly = !$scope.stringOnly;
+    console.log($scope.stringOnly);
+  };
+  $scope.toggleArrayOnly = function () {
+    $scope.arrayOnly = !$scope.arrayOnly;
+    console.log($scope.arrayOnly);
+  };
+  $scope.toggleObjectOnly = function () {
+    $scope.objectOnly = !$scope.objectOnly;
+    console.log($scope.objectOnly);
+  };
   $scope.methods = [
     {
       name: '.length',
