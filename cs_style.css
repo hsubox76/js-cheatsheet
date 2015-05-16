@@ -4,6 +4,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 html {
   font-family: 'Lato', Helvetica, sans-serif;
   font-size: 14px;
+  font-weight: 300;
+}
+
+body {
+  background-color: #eee;
 }
 
 .clearfix:before,
@@ -20,25 +25,25 @@ html {
   zoom: 1; /* ie 6/7 */
 }
 
-div.container {
+.container {
   width: 800px;
-  height: 100%;
   position: relative;
-  border: 1px solid gray;
-  border-radius: 5px;
   padding: 2px;
-  margin: auto;
+  margin: 30px auto 30px auto;
+  border-spacing: 5px;
+  border-collapse: separate;
+  font-weight: 300;
 }
 
-div.row {
+.row {
   width: 100%;
   position: relative;
 }
 
-div.heading {
+.heading {
   float: left;
-  border: 1px solid gray;
-  border-radius: 5px;
+/*  border: 1px solid white;
+  border-radius: 5px;*/
   padding: 5px;
   width: 180px;
   height: 30px;
@@ -48,18 +53,24 @@ div.heading {
 }
 
 .string {
-  background-color: rgb(150, 25, 60);
+  background-color: #fff;
+  border: 1px solid #718DA5;
+  color: #718DA5;
 }
 
 .array {
-  background-color: rgb(170, 55, 70);
+  background-color: #fff;
+  border: 1px solid #496C89;
+  color: #496C89;
 }
 
 .object {
-  background-color: rgb(190, 85, 80);
+  background-color: #fff;
+  border: 1px solid #2A4F6E;
+  color: #2A4F6E;
 }
 
-div.blank {
+.blank {
   border: none;
   background: none;
 }
@@ -67,26 +78,24 @@ div.blank {
 span.heading-text {
   display: inline-block;
   position: relative;
-  top: 50%;
   font-size: 20px;
-  transform: translateY(-50%);
 }
 
-div.method {
+.method {
   float: left;
-  border: 1px solid gray;
-  border-radius: 5px;
+  border: 1px solid #236267;
+  color: #236267;
   padding: 5px;
   width: 180px;
   margin: 3px;
-  color: #fff;
-  background-color: rgb(5, 100, 150);
+  background-color: #fff;
   text-align: left;
+  vertical-align: top;
 }
 
-div.property {
+/*.property {
   background-color: rgb(70, 125, 150);
-}
+}*/
 
 span.method-text {
   margin-left: 10px;
@@ -95,33 +104,33 @@ span.method-text {
   position: relative;
 }
 
-div.info {
+.info {
   float: left;
-  border: 1px solid gray;
-  border-radius: 5px;
+/*  border: 1px solid gray;
+  border-radius: 5px;*/
   padding: 5px;
   width: 180px;
   margin: 3px;
   color: #fff;
-  background-color: #769F7F;
+  background-color: #2A4F6E;
   text-align: left;
   height: auto;
 }
 
-div.na {
-  background-color: #888;
+.na {
+  background-color: #718DA5;
 }
 
-div.experimental {
-  background-color: #AD9700;
-  color: #ddf;
-  border: 3px solid #DBC902;
+.experimental {
+  background-color: #496C89;
+  border: 1px dashed #fff;
   padding: 2px;
 }
 
-.experimental .comment {
-  color: #ddd;
+.mutator {
+  background-color: #277455;
 }
+
 
 span.info-text {
   margin-left: 10px;
@@ -136,9 +145,4 @@ span.info-text {
   font-style: italic;
   color: #ddd;
   margin-left: 5px;
-}
-
-div.mutator {
-  border: 3px dashed #9B0001;
-  padding: 2px;
 }

@@ -6,36 +6,35 @@
     <script src="cheatsheet.js"></script>
   </head>
   <body ng-controller="CheatsheetController">
-    <div class="container">
-      <div class="row clearfix">
-        <div class="heading blank">
+    <table class="container">
+      <tr class="row clearfix">
+        <td class="heading blank">
 
-        </div>
-        <div class="heading string">
+        </td>
+        <td class="heading string">
           <span class="heading-text">String</span>
-        </div>
-        <div class="heading array">
+        </td>
+        <td class="heading array">
           <span class="heading-text">Array</span>
-        </div>
-        <div class="heading object">
+        </td>
+        <td class="heading object">
           <span class="heading-text">Object</span>
-        </div>
-      </div>
-      <div class="row clearfix" ng-repeat="method in methods">
-        <div class="method property">
+        </td>
+      </tr>
+      <tr class="row clearfix" ng-repeat="method in methods">
+        <td class="method property">
           <span class="method-text">{{method.name}}</span>
-        </div>
-        <div class="info" ng-class="{experimental: method.string.experimental, na: !method.string}">
+        </td>
+        <td class="info" ng-class="{experimental: method.string.experimental, na: !method.string}">
           <span class="info-text">{{method.string && method.string.code || '&nbsp;'}} <span class='comment'>{{method.string.comment}}</span></span>
-        </div>
-        <div class="info" ng-class="{experimental: method.array.experimental, mutator: method.array.mutator, na: !method.array}">
+        </td>
+        <td class="info" ng-class="{experimental: method.array.experimental, mutator: method.array.mutator, na: !method.array}">
           <span class="info-text">{{method.array && method.array.code || '&nbsp;'}} <span class='comment'>{{method.array.comment}}</span></span>
-        </div>
-        <div class="info" ng-class="{experimental: method.object.experimental, na: !method.object}">
+        </td>
+        <td class="info" ng-class="{experimental: method.object.experimental, na: !method.object}">
           <span class="info-text">{{method.object && method.object.code || '&nbsp;'}} <span class='comment'>{{method.object.comment}}</span></span>
-        </div>
-      </div>
-    </div>
-    </div>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
