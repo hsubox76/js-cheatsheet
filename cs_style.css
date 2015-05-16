@@ -118,7 +118,13 @@ span.method-text {
 }
 
 .na {
-  background-color: #718DA5;
+  background: repeating-linear-gradient(
+    45deg,
+    #9ab,
+    #9ab 4px,
+    #718DA5 4px,
+    #718DA5 8px
+  );
 }
 
 .experimental {
