@@ -24,15 +24,15 @@
       <tr class="row clearfix" ng-repeat="method in methods" ng-show="
         (!stringOnly && !arrayOnly && !objectOnly) || (method.string && stringOnly) || (method.array && arrayOnly) || (method.object && objectOnly)">
         <td class="method property">
-          <span class="method-text">{{method.name}}</span>
+          <span class="method-text">.{{method.name}}()</span>
         </td>
-        <td class="info" ng-class="{experimental: method.string.experimental, na: !method.string}">
+        <td class="info" ng-click="redirectTo('String/'+method.name)" ng-class="{experimental: method.string.experimental, na: !method.string}">
           <span class="info-text">{{method.string && method.string.code || '&nbsp;'}} <span class='comment'>{{method.string.comment}}</span></span>
         </td>
-        <td class="info" ng-class="{experimental: method.array.experimental, mutator: method.array.mutator, na: !method.array}">
+        <td class="info" ng-click="redirectTo('Array/'+method.name)" ng-class="{experimental: method.array.experimental, mutator: method.array.mutator, na: !method.array}">
           <span class="info-text">{{method.array && method.array.code || '&nbsp;'}} <span class='comment'>{{method.array.comment}}</span></span>
         </td>
-        <td class="info" ng-class="{experimental: method.object.experimental, na: !method.object}">
+        <td class="info" ng-click="redirectTo('Object/'+method.name)" ng-class="{experimental: method.object.experimental, na: !method.object}">
           <span class="info-text">{{method.object && method.object.code || '&nbsp;'}} <span class='comment'>{{method.object.comment}}</span></span>
         </td>
       </tr>

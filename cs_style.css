@@ -125,6 +125,8 @@ span.method-text {
   background-color: #2A4F6E;
   text-align: left;
   height: auto;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 .na {
@@ -135,6 +137,7 @@ span.method-text {
     #718DA5 4px,
     #718DA5 8px
   );
+  cursor: default;
 }
 
 .experimental {
