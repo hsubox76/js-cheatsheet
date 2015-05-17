@@ -129,6 +129,10 @@ span.method-text {
   cursor: pointer;
 }
 
+.info:hover {
+  background-color: #496C89;
+}
+
 .na {
   background: repeating-linear-gradient(
     45deg,
@@ -146,8 +150,16 @@ span.method-text {
   padding: 2px;
 }
 
+.experimental:hover {
+  background-color: #718DA5;
+}
+
 .mutator {
   background-color: #277455;
+}
+
+.mutator:hover {
+  background-color: #489173;
 }
 
 
