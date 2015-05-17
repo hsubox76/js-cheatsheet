@@ -11,6 +11,12 @@ body {
   background-color: #eee;
 }
 
+h1 {
+  letter-spacing: .2em;
+  font-size: 24px;
+  color: 123552;
+}
+
 .clearfix:before,
 .clearfix:after {
   content: "";
@@ -83,6 +89,13 @@ body {
 .blank {
   border: none;
   background: none;
+  cursor: default;
+}
+
+.blank:hover {
+  border: none;
+  background: none;
+  cursor: default;
 }
 
 span.heading-text {
@@ -103,9 +116,10 @@ span.heading-text {
   vertical-align: top;
 }
 
-/*.property {
-  background-color: rgb(70, 125, 150);
-}*/
+.property {
+  color: #123552;
+  background-color: #A3CDEF
+}
 
 span.method-text {
   margin-left: 10px;
@@ -129,7 +143,7 @@ span.method-text {
   cursor: pointer;
 }
 
-.info:hover {
+td.info:hover {
   background-color: #496C89;
 }
 
@@ -150,7 +164,7 @@ span.method-text {
   padding: 2px;
 }
 
-.experimental:hover {
+td.experimental:hover {
   background-color: #718DA5;
 }
 
@@ -158,10 +172,9 @@ span.method-text {
   background-color: #277455;
 }
 
-.mutator:hover {
+td.mutator:hover {
   background-color: #489173;
 }
-
 
 span.info-text {
   margin-left: 10px;
@@ -176,4 +189,16 @@ span.info-text {
   font-style: italic;
   color: #ddd;
   margin-left: 5px;
+}
+
+.instructions {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.key-box {
+  width: 100px;
+  height: 15px;
+  padding: 8px;
+  cursor: default;
 }

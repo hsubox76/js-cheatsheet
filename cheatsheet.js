@@ -27,13 +27,28 @@ CheatsheetApp.controller('CheatsheetController', function ($scope, $window) {
     }
   };
   $scope.methods = [
-    // string/array shared methods
-    // {
-    //   name: 'length',
-    //   string: { code: '"abc".length', comment: '// 3'},
-    //   array: { code: '[1,2,3].length', comment: '// 3'},
-    //   object: null
-    // },
+    // string/array/obj shared props
+    {
+      name: 'constructor',
+      property: true,
+      string: { code: '"abc".constructor', comment: '// String'},
+      array: { code: '[1,2,3].constructor', comment: '// Array'},
+      object: { code: 'var obj = {}; obj.constructor', comment: '// Object'}
+    },
+    {
+      name: 'toString',
+      string: { code: '"abc".toString()', comment: '// "abc"'},
+      array: { code: '[1,2,3].toString()', comment: '// "123"'},
+      object: { code: 'var obj = {}; obj.toString()', comment: '// "[object Object]"'}
+    },
+    // string/array shared props
+    {
+      name: 'length',
+      property: true,
+      string: { code: '"abc".length', comment: '// 3'},
+      array: { code: '[1,2,3].length', comment: '// 3'},
+      object: null
+    },
     {
       name: 'concat',
       string: { code: '"ab".concat("cd")', comment: '// "abcd"'},
@@ -57,12 +72,6 @@ CheatsheetApp.controller('CheatsheetController', function ($scope, $window) {
       string: { code: '"abb".lastIndexOf("b")', comment: '// 2'},
       array: { code: '[3,1,3].lastIndexOf(3)', comment: '// 2'},
       object: null
-    },
-    {
-      name: 'toString',
-      string: { code: '"abc".toString()', comment: '// "abc"'},
-      array: { code: '[1,2,3].toString()', comment: '// "123"'},
-      object: { code: 'anyObj.toString()', comment: '// "[object Object]"'}
     },
     // string methods only
     {
@@ -234,13 +243,73 @@ CheatsheetApp.controller('CheatsheetController', function ($scope, $window) {
     {
       name: 'forEach',
       string: null,
-      array: { code: '[1,2,3].forEach(function(x){ console.log(x) })', comment: '// 1 2 3', url: 'forEach'},
+      array: { code: '[1,2,3].forEach(function(x){ console.log(x) })', comment: '// 1 2 3'},
       object: null
     },
     {
       name: 'entries',
       string: null,
-      array: { code: 'see MDN docs', comment: '', url: 'entries'},
+      array: { code: 'click to see MDN docs', comment: '', experimental: true},
+      object: null
+    },
+    {
+      name: 'every',
+      string: null,
+      array: { code: '[1,1,2].every(function(x){ return x === 1 })', comment: '// false'},
+      object: null
+    },
+    {
+      name: 'some',
+      string: null,
+      array: { code: '[1,2,3].some(function(x){ return x === 1 })', comment: '// true'},
+      object: null
+    },
+    {
+      name: 'filter',
+      string: null,
+      array: { code: '[1,2,3].filter(function(x){ return x < 3 })', comment: '// [1,2]'},
+      object: null
+    },
+    {
+      name: 'find',
+      string: null,
+      array: { code: '[1,2,3].find(function(x){ return x > 2 })', comment: '// 3', experimental: true},
+      object: null
+    },
+    {
+      name: 'findIndex',
+      string: null,
+      array: { code: '[1,2,3].findIndex(function(x){ return x > 2 })', comment: '// 2', experimental: true},
+      object: null
+    },
+    {
+      name: 'keys',
+      string: null,
+      array: { code: 'click to see MDN docs', comment: '', experimental: true},
+      object: null
+    },
+    {
+      name: 'map',
+      string: null,
+      array: { code: '[1,2,3].map(function(x){ return x * 2 })', comment: '// [2,4,6]'},
+      object: null
+    },
+    {
+      name: 'reduce',
+      string: null,
+      array: { code: '["a","b","c"].reduce(function(a,i){ return a += i; })', comment: '// "abc"'},
+      object: null
+    },
+    {
+      name: 'reduceRight',
+      string: null,
+      array: { code: '["a","b","c"].reduce(function(a,i){ return a += i; })', comment: '// "cba"'},
+      object: null
+    },
+    {
+      name: 'values',
+      string: null,
+      array: { code: 'click to see MDN docs', comment: '', experimental: true},
       object: null
     },
     // object methods only
@@ -249,6 +318,18 @@ CheatsheetApp.controller('CheatsheetController', function ($scope, $window) {
       string: null,
       array: null,
       object: { code: '{x: 1}.hasOwnProperty("x"}', comment: '// true'}
+    },
+    {
+      name: 'isPrototypeOf',
+      string: null,
+      array: null,
+      object: { code: 'click to see MDN docs', comment: ''}
+    },
+    {
+      name: 'propertyIsEnumerable',
+      string: null,
+      array: null,
+      object: { code: 'click to see MDN docs', comment: ''}
     },
   ];
 });

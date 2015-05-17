@@ -8,6 +8,21 @@
   <body ng-controller="CheatsheetController">
     <table class="container">
       <tr class="row clearfix">
+        <td colspan=4>
+          <h1>JAVASCRIPT COMMON METHODS CHEATSHEET</h1>
+          <div class="legend clearfix">
+            <div class="key-box method property">.property</div>
+            <div class="key-box method">.method()</div>
+            <div class="key-box info">Normal</div>
+            <div class="key-box info experimental">Experimental</div>
+            <div class="key-box info mutator">Mutator *</div>
+          </div>
+          <div class="instructions">* changes array in place</div>
+          <div class="instructions">Click column header to see only methods/properties of that data type.</div>
+          <div class="instructions">Click example box to go to MDN documentation page for that method/property.</div>
+        </td>
+      </tr>
+      <tr class="row clearfix">
         <td class="heading blank">
 
         </td>
@@ -23,8 +38,8 @@
       </tr>
       <tr class="row clearfix" ng-repeat="method in methods" ng-show="
         (!stringOnly && !arrayOnly && !objectOnly) || (method.string && stringOnly) || (method.array && arrayOnly) || (method.object && objectOnly)">
-        <td class="method property">
-          <span class="method-text">.{{method.name}}()</span>
+        <td class="method" ng-class="{property: method.property}">
+          <span class="method-text" ng-show="!method.property">.{{method.name}}()</span><span class="method-text" ng-show="method.property">.{{method.name}}</span>
         </td>
         <td class="info" ng-click="redirectTo('String/'+method.name)" ng-class="{experimental: method.string.experimental, na: !method.string}">
           <span class="info-text">{{method.string && method.string.code || '&nbsp;'}} <span class='comment'>{{method.string.comment}}</span></span>
